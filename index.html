@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/ksusha.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="headers">
+          MongoDB
+          <aside class="notes">
+            Hi everyone! I am Kseniya. And today I’m going to talk about MongoDB
+            and (докьюмент дэта модел)document data model. I’m sorry for my voice. I'm sick. To begin
+            with, we need to know ...
+          </aside>
+        </section>
+        <section>
+          <section>
+            <h2>What is data model?</h2>
+            <aside class="notes">What is data model?</aside>
+          </section>
+          <section>
+            <ins><strong>A data model</strong></ins> is an abstract model that
+            organizes elements of data and standardizes how they relate to one
+            another.
+            <aside class="notes">
+              A data model is an abstract model that organizes elements of data
+              and standardizes how they relate to one another. A data model
+              детёминс determines methods and techniques for interaction with data like
+              create, read, update, delete, filter and so on.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What are data models exist?</h2>
+            <aside class="notes">What are data models exist</aside>
+          </section>
+          <section>
+            There are many data models, but the most popular is:
+            <ul>
+              <li>relational database</li>
+              <li>document-oriented database</li>
+            </ul>
+            <aside class="notes">
+              There are many data models, but the most popular is: relational
+              database and document-oriented database
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What is relational database?</h2>
+          </section>
+          <section>
+            <ins><strong>A relational database</strong></ins> is a way of
+            structuring information in tables, rows, and columns.
+            <img src="./img/0.png" />
+            <aside class="notes">
+              A relational database (RDB) is a way of structuring information in
+              tables, rows, and columns. An RDB has the ability to establish
+              links—or relationships–between information by joining tables,
+              which makes it easy to understand and gain insights about the
+              relationship between various data points.
+            </aside>
+          </section>
+          <section>
+            <img src="./img/1.png" />
+            <aside class="notes">Each table column has an attribute...</aside>
+          </section>
+          <section>
+            <img src="./img/2.png" />
+            <aside class="notes">... and his specific data type</aside>
+          </section>
+          <section>
+            <img src="./img/3.png" />
+            <aside class="notes">Each table cell has an attribute value</aside>
+          </section>
+          <section>
+            <img src="./img/4.png" />
+            <aside class="notes">
+              Each row of the table has a set of associated values. These values
+              refer only one object.
+            </aside>
+          </section>
+          <section>
+            <img src="./img/5.png" />
+            <aside class="notes">
+              Each row of the table can have unique identifier. This is called a
+              primary key
+            </aside>
+          </section>
+          <section>
+            <img src="./img/6.png" />
+            <aside class="notes">
+              Few rows from different table may are linked by a foreign key.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>What is document-oriented database?</h2>
+            <aside class="notes">What is document-oriented database?</aside>
+          </section>
+          <section>
+            <ins><strong>Document-oriented database</strong></ins> is a set of
+            documents. Each document has unique id and a set of key-value pairs.
+            An id allows finding whole document.
+            <img class="documents-img" src="./img/7.png" />
+            <aside class="notes">
+              Document-oriented database is a set of documents. Each document
+              has unique id and a set of key-value pairs. An id allows finding
+              whole document.
+            </aside>
+          </section>
+          <section>
+            MongoDB is document-oriented database.
+            <aside class="notes">
+              MongoDB is document-oriented database. In this video, I’ll tell
+              about process in MongoDB.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>How the data is stored?</h2>
+            <aside class="notes">
+              How the data is stored?
+            </aside>
+          </section>
+          <section>
+            <img src="./img/00.png" />
+            <aside class="notes">
+              In MongoDB, data is stored in JSON-objects
+            </aside>
+          </section>
+          <section>
+            <img src="./img/01.png" />
+            <aside class="notes">.JSON-objects have an id ...</aside>
+          </section>
+          <section>
+            <img src="./img/02.png" />
+            <aside class="notes">
+              and a set of key-value pairs. Key-value pairs describe object
+              properties.
+            </aside>
+          </section>
+          <section>
+            <img src="./img/03.png" />
+            <aside class="notes">
+              A set of JSON-object or documents is called collection.
+            </aside>
+          </section>
+          <section>
+            <img src="./img/04.png" />
+            <aside class="notes">
+              If we need to get document, we will send request in collection and
+              indicate object id.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Why we need all data in one place?</h2>
+            <aside class="notes">
+              We will receive all document properties when we obtain document
+              object. This principle is called ...
+            </aside>
+          </section>
+          <section>
+            <ins><strong>Locality</strong></ins> means that all data is stored in one place.
+            <aside class="notes">
+              ...locality and means that all data is stored in one place.
+            </aside>
+          </section>
+          <section>
+            +: one request give all data about particular document
+            <aside class="notes">
+              On the one hand, this is a big advantage, because one request give
+              all data about particular document.
+            </aside>
+          </section>
+          <section>
+            + : one request give all data about particular document - : we will
+            get all data anyway
+            <aside class="notes">
+              On the other hand, if we want to get not all document properties,
+              we will get all data anyway. This situation complicates a hardware
+              computing work. ... Sometimes, if we need to change some object
+              properties, we will change all document.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Links</h2>
+            <aside class="notes">
+              Each document properties may contain links to other attribute
+              values in other collection and document. What it means?
+            </aside>
+          </section>
+          <section>
+            We need dictionary.
+            <aside class="notes">
+              We can create some collection. It will include few documents with
+              one attribute, such as value. We can use this collection like
+              dictionary, whose values will use in other collections.
+            </aside>
+          </section>
+          <section>
+            Dictionary will help avoid a mistake.
+            <aside class="notes">
+              If we allow to writing typed values using manual input, we will
+              have a lot of mistakes.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Normalization</h2>
+            <aside class="notes">
+               The idea of ​​storing data in one place is
+              called...
+            </aside>
+          </section>
+          <section>
+            <h2>Normalization</h2>
+            The idea of ​​storing data in one place.
+            <aside class="notes">
+              ... (Номалазейшон )Normalization.... It gives us a lot of values: we can easily
+              change, save and delete values.
+            </aside>
+          </section>
+          <section>
+            + : easy control.
+            <aside class="notes">
+              We do not store data in more places than necessary and we have
+              control over the (коррЭктнесс)correctness of this data. On the other hand,
+              there is a (вайолэйшен) violation of locality.
+            </aside>
+          </section>
+          <section>
+            <p>+ : easy control.</p>
+            <p>- : incomplete document in first request.</p>
+            <aside class="notes">
+              . Now that we have already selected a document, we do not have all
+              the information on it. We need to make one more request to get all
+              the information on the first document. This is bad, since one
+              request is faster than several, since the request may get queued
+              or the speed of processing the collection referenced by our
+              attribute will be less than for the current collection.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h2>Recap</h2>
+          <aside class="notes">
+            In any case, you need to choose tools for your tasks. And if you are
+            satisfied with the document-oriented model - choose it.
+          </aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      });
+    </script>
+  </body>
+</html>
